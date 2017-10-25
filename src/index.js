@@ -30,12 +30,12 @@ class Game extends React.Component {
   constructor() {
     super();
     this.state = {
-        history: [{
-          squares: Array(9).fill(null),
-          lastStep: 'Game start',
-        }],
-        stepNumber: 0,
-        xIsNext: true,
+      history: [{
+        squares: Array(9).fill(null),
+        lastStep: 'Game start',
+      }],
+      stepNumber: 0,
+      xIsNext: true,
     }
   }
 
@@ -43,6 +43,7 @@ class Game extends React.Component {
   handleClick(i) {
     const history = this.state.history;
     const current = history[this.state.stepNumber];
+    // deep clone
     const squares = current.squares.slice(); 
     // if the game is over, forbid to click
     // or this square is clicked 
